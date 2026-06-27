@@ -1,0 +1,100 @@
+html<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KryptoBooks - E-booki o Kryptowalutach</title>
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">
+
+    <!-- Nawigacja -->
+    <nav class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-black tracking-tight text-emerald-400">
+                📚 KRYPTO<span class="text-white">BOOKS</span>
+            </div>
+            <div class="text-sm bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">
+                🛒 Koszyk: <span id="cart-count" class="font-bold text-emerald-400">0 szt.</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="max-w-4xl mx-auto text-center py-16 px-4">
+        <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded-full">
+            Natychmiastowa wysyłka PDF na e-mail
+        </span>
+        <h1 class="text-4xl md:text-5xl font-black mt-4 mb-6 leading-tight">
+            Zdobądź wiedzę o <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Kryptowalutach</span>
+        </h1>
+        <p class="text-slate-400 text-base max-w-xl mx-auto">
+            Przejrzyste przewodniki i strategie inwestycyjne. Czytaj na telefonie, tablecie lub czytniku Kindle.
+        </p>
+    </header>
+
+    <!-- Lista E-booków -->
+    <main class="max-w-7xl mx-auto px-4 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Ebook 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/40 transition">
+                <div>
+                    <div class="w-full h-40 bg-gradient-to-br from-slate-800 to-slate-950 rounded-xl mb-4 p-4 flex flex-col justify-between border border-slate-800">
+                        <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded self-start">PDF</span>
+                        <div class="font-bold text-sm text-slate-200">Zrozumieć Bitcoina: Od A do Z</div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Zrozumieć Bitcoina: Przewodnik</h3>
+                    <p class="text-slate-400 text-xs mb-6">Kompletny podręcznik wyjaśniający mechanizm blockchain, halving oraz bezpieczne zakupy pierwszej kryptowaluty.</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                    <span class="text-xl font-black">49 PLN</span>
+                    <button onclick="addToCart('Zrozumieć Bitcoina')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs transition">📥 Kup teraz</button>
+                </div>
+            </div>
+
+            <!-- Ebook 2 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/40 transition">
+                <div>
+                    <div class="w-full h-40 bg-gradient-to-br from-slate-800 to-slate-950 rounded-xl mb-4 p-4 flex flex-col justify-between border border-slate-800">
+                        <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded self-start">KURS + PDF</span>
+                        <div class="font-bold text-sm text-slate-200">Strategie Tradingowe Crypto</div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Strategie Tradingowe</h3>
+                    <p class="text-slate-400 text-xs mb-6">Dowiedz się, jak czytać wykresy, zarządzać ryzykiem i unikać emocjonalnych pułapek podczas bessy i hossy.</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                    <span class="text-xl font-black">79 PLN</span>
+                    <button onclick="addToCart('Strategie Tradingowe')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs transition">📥 Kup teraz</button>
+                </div>
+            </div>
+
+            <!-- Ebook 3 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/40 transition">
+                <div>
+                    <div class="w-full h-40 bg-gradient-to-br from-slate-800 to-slate-950 rounded-xl mb-4 p-4 flex flex-col justify-between border border-slate-800">
+                        <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded self-start">EPUB / PDF</span>
+                        <div class="font-bold text-sm text-slate-200">Poradnik Cyberbezpieczeństwa</div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Cyberbezpieczeństwo Web3</h3>
+                    <p class="text-slate-400 text-xs mb-6">Chroń swoje cyfrowe aktywa. Jak poprawnie skonfigurować portfel sprzętowy i unikać popularnych oszustw.</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                    <span class="text-xl font-black">39 PLN</span>
+                    <button onclick="addToCart('Cyberbezpieczeństwo Web3')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs transition">📥 Kup teraz</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        let count = 0;
+        function addToCart(title) {
+            count++;
+            document.getElementById('cart-count').innerText = count + " szt.";
+            alert('Dodano do koszyka: ' + title + '! W pełnej wersji tutaj otworzy się płatność BLIK.');
+        }
+    </script>
+</body>
+</html>
