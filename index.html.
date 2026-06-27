@@ -3,6 +3,8 @@ html<!-- Skrypt aktywacyjny Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
+<!-- Vercel Analytics dla Next.js/HTML -->
+<script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script><html lang="pl">
 <head>
     <meta charset="UTF-8">
